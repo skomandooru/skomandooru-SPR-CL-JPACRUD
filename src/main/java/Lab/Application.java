@@ -40,6 +40,9 @@ public class Application {
         System.out.println("Let's try deleting store of id 2 and then getting all stores.");
         storeService.deleteStore(2L);
         System.out.println(storeService.getAllStores());
+        System.out.println("Finally, let's try updating a store and then getting all stores.");
+        storeService.updateStore(1L, new Store("ted balashov's corner market",  "123 main street"));
+        System.out.println(storeService.getAllStores());
 
 
     }
