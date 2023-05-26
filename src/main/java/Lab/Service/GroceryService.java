@@ -1,7 +1,7 @@
-package Lab.Repository;
+package Lab.Service;
 
 import Lab.Model.Grocery;
-import Lab.Service.GroceryRepository;
+import Lab.Repository.GroceryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
