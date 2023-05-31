@@ -1,7 +1,7 @@
-package Lab.Repository;
+package Lab.Service;
 
 import Lab.Model.Store;
-import Lab.Service.StoreRepository;
+import Lab.Repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -29,10 +29,11 @@ public class StoreService {
     }
     /**
      * TODO: given an id of a store, return the store.
-     * @return a store entity
+     *
      * @param id id of store entity
+     * @return a store entity
      */
-    public List<Store> getStoreById(long id){
+    public Store getStoreById(long id){
         return null;
     }
     /**

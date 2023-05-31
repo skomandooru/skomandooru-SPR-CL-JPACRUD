@@ -2,12 +2,17 @@ package Lab;
 
 import Lab.Model.Grocery;
 import Lab.Model.Store;
-import Lab.Repository.GroceryService;
-import Lab.Repository.StoreService;
+import Lab.Service.GroceryService;
+import Lab.Service.StoreService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+/**
+ * The @SpringBootApplication annotation enables automatic configuration of a Spring App.
+ * Check out the GroceryService for current JPACRUD implementation and StoreService classes for the code you need to
+ * change. There is no need to change anything in this class.
+ */
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {
