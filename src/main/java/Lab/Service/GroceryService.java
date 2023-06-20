@@ -3,9 +3,12 @@ package Lab.Service;
 import Lab.Model.Grocery;
 import Lab.Repository.GroceryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
 public class GroceryService {
     GroceryRepository groceryRepository;
     @Autowired
@@ -37,7 +40,12 @@ public class GroceryService {
     public Grocery getGroceryById(long id){
         //findById returns a type Optional<Grocery>. This helps the developer avoid null pointer
         //exceptions. We can use the method .get() to convert an Optional<Grocery> to Grocery.
-        return groceryRepository.findById(id).get();
+        Optional<Grocery> optionalGrocery = groceryRepository.findById(id);
+        if(optionalGrocery.isPresent()){
+            return optionalGrocery.get();
+        }else{
+            return null;
+        }
     }
     /**
      * Delete a grocery entity of a certain id.
@@ -55,8 +63,12 @@ public class GroceryService {
     public void updateGrocery(long id, Grocery replacement){
         //findById returns a type Optional<Grocery>. This helps the developer avoid null pointer
         //exceptions. We can use the method .get() to convert an Optional<Grocery> to Grocery.
-        Grocery grocery = groceryRepository.findById(id).get();
-        grocery.setName(replacement.getName());
-        groceryRepository.save(grocery);
+        Optional<Grocery> optionalGrocery = groceryRepository.findById(id);
+        if(optionalGrocery.isPresent()){
+            Grocery grocery = optionalGrocery.get();
+            grocery.setName(replacement.getName());
+            groceryRepository.save(grocery);
+        }
+
     }
 }
