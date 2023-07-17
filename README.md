@@ -1,6 +1,6 @@
 # SPR-CL-JPACRUD
 
-This coding lab covers unit "Spring Boot", module "Spring Data JPA".
+This coding lab covers unit "Spring Data JPA", module "Spring Data Repositories".
 
 ## Instructions
 - This project is an example of a Grocery Application. It contains CRUD operations that let us create/edit/delete stores and grocery items. 
